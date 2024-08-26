@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShoppingAPI.Models;
+
 namespace ShoppingAPI.Models
 {
     public class DBContext :DbContext

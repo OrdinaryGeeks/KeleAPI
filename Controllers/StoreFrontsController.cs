@@ -51,9 +51,7 @@ namespace ShoppingAPI.Controllers
         public async Task<ActionResult> AddStoreItems([FromBody]InventoryItem[] storeInventory)
         {
             InventoryItem[] itemsToBeAdded = new InventoryItem[1];
-          //  if(storeInventory!= null)
-           // itemsToBeAdded = JsonConvert.DeserializeObject<InventoryItem[]>(storeInventory) ?? throw new Exception();
-
+     
             InventoryItem? itemToChange;
             foreach (InventoryItem item in storeInventory)
 
@@ -62,7 +60,7 @@ namespace ShoppingAPI.Controllers
                 if (itemToChange != null)
                 {
                     itemToChange.UnitsAvailable += item.UnitsAvailable;
-                   // _context.Entry(itemToChange).CurrentValues.SetValues(item);
+                
                     _context.Entry(itemToChange).State= EntityState.Modified;
                 }
                 else
@@ -198,8 +196,7 @@ namespace ShoppingAPI.Controllers
 
             CartItem[] shoppingCartItems = new CartItem[1];
 
-            //if (cartItems != null)
-              //  shoppingCartItems = JsonConvert.DeserializeObject<CartItem[]>(cartItems) ?? throw new Exception();
+            
 
             if (cartItems != null)
             {
